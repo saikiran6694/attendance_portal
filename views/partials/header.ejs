@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CDN Files -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- XLSX Package installer -->
+
+    <script lang="text/javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+    <!-- Title -->
+    <title>Attendance Form</title>
+
+    <header>
+        <img class="logo" src="/assets/logo-white.svg" alt="reva_logo">
+        <nav>
+            <ul>
+                <li><%= newDate %></li>
+                <li><a class="admin" href="/details">Admin</a></li>
+            </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMenu(this)">
+            <div class="bar-1"></div>
+            <div class="bar-2"></div>
+            <div class="bar-3"></div>
+            <ul class="mobile-menu">
+                <li><%= newDate %></li>
+                <li><a class="admin" href="/details">Admin</a></li>
+            </ul>
+        </div>
+    </header>
+</head>

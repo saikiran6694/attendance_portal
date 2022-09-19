@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+:root {
+  --primary: #000;
+  --secondary: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background-color: #2c3639;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 8rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: azure;
+}
+
+.admin {
+  border: 1px solid azure;
+  padding: 0.5rem 1rem;
+}
+
+ul a:hover {
+  color: azure;
+  background-color: #d67d3e;
+  border: 1px solid #ffc090;
+}
+
+ul li {
+  color: azure;
+  padding: 1rem;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  color: #ffc090;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: azure;
+  margin: 6px 0;
+  transform: 0.4s;
+}
+
+.open .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  transform: rotate(45deg) translate(-6px, 8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.box {
+  border: 0 0 0 2px solid #2c3639;
+  box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.9);
+  color: azure;
+  margin-top: 2rem;
+  height: auto;
+  padding: 1rem;
+  width: 30%;
+}
+
+h1,
+h2 {
+  color: #ffc090;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.input-section {
+  margin-top: 2rem;
+}
+
+.radio {
+  margin: 1rem 0rem;
+}
+
+input[type="text"] {
+  font-size: 1.1rem;
+}
+
+button {
+  padding: 0rem 1rem;
+  color: azure;
+  font-size: 1.2rem;
+  background-color: #d67d3e;
+  border-radius: 10px;
+  border: 1px solid #ffc090;
+}
+
+.table-box {
+  background-color: azure;
+  margin-top: 2rem;
+  padding: 2rem;
+  width: 90%;
+  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.5);
+}
+
+table td {
+  color: #2c3639;
+  font-size: 1rem;
+  text-transform: initial;
+}
+
+@media screen and (max-width: 600px), (max-width: 900px) {
+  header nav {
+    display: none;
+  }
+
+  #hamburger-icon {
+    display: block;
+  }
+
+  .mobile-menu {
+    background-color: #2c3639;
+  }
+
+  .mobile-menu li {
+    border-bottom: 2px solid azure;
+  }
+
+  .box,
+  input[type="submit"] {
+    width: 80%;
+    margin-top: 2rem;
+  }
+
+  .table-box {
+    width: 90%;
+  }
+
+  table {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+}

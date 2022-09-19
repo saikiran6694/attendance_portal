@@ -1,0 +1,67 @@
+<%- include("partials/header") %>
+
+<body style='background: linear-gradient(
+    135deg,
+    rgba(21, 21, 21, 0.755),
+    rgba(16, 16, 16, 0.861)
+  ),
+  url("/assets/bg1.jpeg"); background-position: center; background-repeat: no-repeat; background-size: cover;
+    font-family: "Montserrat" , sans-serif; height: 100vh;'>
+
+    <div class="container box">
+        <h1 style="font-size: 2rem;">Attendance Form</h1>
+        <div class="input-section">
+            <form action="/" method="post">
+
+                <!-- Basic Details Section -->
+
+                <input type="text" name="fname" class="form-control field" placeholder="Enter Full Name" required><br>
+                <input type="text" name="srn" class="form-control field" placeholder="SRN" required><br>
+                <input type="text" name="semester" class="form-control field" placeholder="Semester" required><br>
+
+                <!-- Section Selection Section -->
+
+                <select name="section" id="sec" class="form-select" required>
+                    <option value="">Choose Your Section </option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                </select><br>
+
+                <!-- Email ID Section -->
+
+                <input type="email" name="mail" class="form-control" placeholder="Enter Reva Mail ID"
+                    autocomplete="email" required>
+
+                <!-- Intership / Placement Section -->
+
+                <div class="radio">
+                    <h5>Attendance for: </h5>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="attendance" id="internship"
+                            value="Intership">
+                        <label for="intership" class="form-check-label">Intership</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="attendance" id="placement" value="Placement"
+                            required>
+                        <label for="placement" class="form-check-label">Placement</label>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <button type="submit" name="submit"><a href="/success">Submit</a></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu(menu) {
+            menu.classList.toggle("open");
+        }
+    </script>
+
+    <%- include("partials/footer") %>

@@ -1,0 +1,83 @@
+<%- include("partials/header") %>
+
+<body style="background-color: azure;">
+
+    <div class="container table-box">
+        <h1>Student Attendance List</h1>
+
+        <!-- Export To Excel Button  -->
+
+        <button class="btn btn-dark" id="exportToExcel">Download Excel File</button>
+
+        <!-- Attendance List Table  -->
+
+        <table id="Attendance-table" class="table table-bordered" style="margin-top: 1rem;">
+            <thead class="table-primary">
+
+                <!-- Table Headings Part -->
+
+                <tr>
+                    <th scope="col">SRN</th>
+                    <th scope="col">Student Name</th>
+                    <th scope="col">Semester & Sec</th>
+                    <th scope="col">E-Mail ID</th>
+                    <th scope="col">Intership / Placement</th>
+                    <th scope="col">No of Days</th>
+                </tr>
+            </thead>
+    </div>
+
+
+
+    <!-- Dynamic Data Allocation Part -->
+
+    <tbody>
+        <% studentList.forEach(student => { %>
+        <tr>
+            <td scope="row"><%= student.srn %></td>
+            <td><%=student.name %></td>
+            <td><%=student.sem %>th <%= student.sec %></td>
+            <td><%=student.email %></td>
+            <td><%= student.aFor %></td>
+            <td><%= student.nDays %></td>
+        </tr>
+
+        <%})%>
+
+    </tbody>
+    </table>
+
+    <script>
+        function toggleMenu(menu) {
+            menu.classList.toggle("open");
+        }
+    </script>
+
+
+    <!-- Functionality for convert table data to excel sheets -->
+
+    <script>
+        function htmlToExcel(type) {
+            var data = document.getElementById("Attendance-table");
+            var file = XLSX.utils.table_to_book(data, {
+                sheet: "sheet1",
+            });
+
+            XLSX.write(file, {
+                bookType: type,
+                bookSST: true,
+                type: "base64",
+            });
+            XLSX.writeFile(file, "Attendance_List." + type);
+        }
+
+        const exportToExcel = document.getElementById("exportToExcel");
+        exportToExcel.addEventListener('click', () => {
+            htmlToExcel('xlsx');
+        });
+    </script>
+
+
+
+
+    <%- include("partials/footer") %>
